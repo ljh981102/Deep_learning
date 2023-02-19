@@ -24,6 +24,7 @@ def numerical_gradient(f, x):
 
 
 # 分别求（3，4）（0，2）（3，0）点的梯度
-print(numerical_gradient(function_2, np.array([3.0, 4.0])))
-print(numerical_gradient(function_2, np.array([0.0, 2.0])))
-print(numerical_gradient(function_2, np.array([3.0, 0.0])))
+if __name__ == '__main__':
+    print(numerical_gradient(function_2, np.array([3.0, 4.0])))
+    print(numerical_gradient(function_2, np.array([0.0, 2.0])))
+    print(numerical_gradient(function_2, np.array([3.0, 0.0])))
