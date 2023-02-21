@@ -122,9 +122,9 @@ for i in range(iters_num):
 
     # 计算梯度
     # grad = network.numerical_gradient(x_batch, t_batch)
-    grad = network.gradient(x_batch, t_batch)  # 高速版
+    grad = network.gradient(x_batch, t_batch)  # 高速版使用 误差反向传播法 优化
 
-    # 更新参数
+    # 向梯度减小的方向 更新参数
     for key in ('W1', 'b1', 'W2', 'b2'):
         network.params[key] -= learning_rate * grad[key]
 
@@ -139,6 +139,6 @@ for i in range(iters_num):
         test_acc = network.accuracy(x_test, t_test)
         train_acc_list.append(train_acc)
         test_acc_list.append(test_acc)
-        print("train acc, test acc | " + str(train_acc) + ", " + str(test_acc))
+        print("train accuracy, test accuracy | %.2f%%，%.2f%%" % (train_acc * 100, test_acc * 100))
 
 # print(train_loss_list)
